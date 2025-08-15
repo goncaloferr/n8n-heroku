@@ -13,3 +13,4 @@ Refer to the [Heroku n8n tutorial](https://docs.n8n.io/hosting/server-setups/her
 If you have questions after trying the tutorials, check out the [forums](https://community.n8n.io/).
 
 - Bump n8n version 10/02/2025
+- Bump n8n version 15/08/2025
