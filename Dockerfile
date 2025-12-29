@@ -12,8 +12,14 @@ USER node
 WORKDIR /home/node/.n8n/nodes
 RUN npm init -y && npm install n8n-nodes-upload-post
 
-WORKDIR /home/node/packages/cli
+# Voltar ao working dir padrão
+WORKDIR /home/node
 
-COPY ./entrypoint.sh /
-RUN chmod +x /entrypoint.sh
-CMD ["/entrypoint.sh"]
+# Copiar o entrypoint para um local onde podemos dar chmod sem stress
+USER root
+COPY ./entrypoint.sh /home/node/entrypoint.sh
+RUN chmod +x /home/node/entrypoint.sh \
+  && chown node:node /home/node/entrypoint.sh
+
+USER node
+CMD ["/home/node/entrypoint.sh"]
