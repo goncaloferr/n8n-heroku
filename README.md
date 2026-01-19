@@ -46,3 +46,4 @@ git push origin main
 - Bump n8n version 15/08/2025
 - Bump n8n version 15/12/2025
 - Bump n8n version 29/12/2025
+- Bump n8n version 19/01/2026
