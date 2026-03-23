@@ -10,7 +10,10 @@ RUN mkdir -p /home/node/.n8n/nodes \
 # Instalar o community node no local correto
 USER node
 WORKDIR /home/node/.n8n/nodes
-RUN npm init -y && npm install n8n-nodes-upload-post
+RUN npm init -y \
+  && npm install \
+      n8n-nodes-upload-post \
+      @apify/n8n-nodes-apify
 
 # Voltar ao working dir padrão
 WORKDIR /home/node
